@@ -19,12 +19,8 @@ module.exports = {
 
             const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
             //continuar 
-
             const { name = login, avatar_url, bio } = apiResponse.data;
             //{ } desetruturação (name = login == se não existir name entra login no lugar)
-
-            //console.log(name, avatar_url, bio, github_username);
-
             const techsArray = ParseStringAsArray(techs);
 
             const location = {

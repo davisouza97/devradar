@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+const cors = require('cors');
 
 const app = express();
 
@@ -10,6 +11,8 @@ mongoose.connect('mongodb+srv://davi:senhadavi@cluster0-gd5jc.mongodb.net/week10
 });
 
 
+app.use(cors());   //geral
+//app.use(cors({ origin: 'http://localhost:3000'}));   //localhost
 //para que o express entenda o body json
 app.use(express.json());
 app.use(routes);
